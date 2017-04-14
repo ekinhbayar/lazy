@@ -107,7 +107,9 @@ error_log = /var/log/php714-fpm.log
 include=/usr/local/php714/etc/php-fpm.d/*.conf
 ```
 
-`nano /usr/local/php712/etc/conf.d/modules.ini`
+`mkdir /usr/local/php714/etc/conf.d/`
+
+`nano /usr/local/php714/etc/conf.d/modules.ini`
 
 ```
 # Zend OPcache
