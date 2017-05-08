@@ -110,3 +110,14 @@ Use the `lscpu` command as it shows information about your CPU architecture such
 ---
 
 
+## Libraries
+
+`/sbin/ldconfig -p | grep [name]` (The -v option will show the libraries version.)
+
+If you want to turn that list into a list of packages, you can do something like this:
+
+`dpkg -S $(/sbin/ldconfig -p | awk 'NR>1 { print $NF }')`
+
+Also `apt-cache show PACKAGE_NAME`
+
+
