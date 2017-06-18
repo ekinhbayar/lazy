@@ -147,7 +147,7 @@ Add php-fpm to init.d `nano /etc/init.d/php714-fpm`
 PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/php714/sbin
 DESC="PHP7 FastCGI Process Manager"
 NAME=php714-fpm
-DAEMON=/usr/local/php714/sbin/$NAME
+DAEMON=/usr/local/php714/sbin/php-fpm
 CONFFILE=/usr/local/php714/etc/php-fpm.conf
 DAEMON_ARGS="--daemonize --fpm-config $CONFFILE"
 CONF_PIDFILE=$(sed -n 's/^pid[ =]*//p' $CONFFILE)
@@ -333,6 +333,10 @@ esac
 
 ---
 
-Do the nginx magic and start systemctl unit
+Do the nginx magic, mainly it is having the below directive on sites-* :
+
+`fastcgi_pass unix:/var/run/php714-fpm/php714-fpm.sock;`
+
+Then `service nginx start`.
 
 Profit!
