@@ -121,3 +121,18 @@ If you want to turn that list into a list of packages, you can do something like
 Also `apt-cache show PACKAGE_NAME`
 
 
+## Desktop Entry
+
+* Nautilus as root
+
+Check if you have gksu, then `sudo nano /home/username/Desktop/filemanager.desktop`
+
+```
+[Desktop Entry]
+Name=filemanager
+Exec=gksudo -k -u root nautilus
+Type=Application
+Icon=/home/username/Downloads/file-manager.png
+```
+
+then `chmod +x /home/username/Desktop/filemanager.desktop`, profit!
