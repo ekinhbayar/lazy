@@ -18,3 +18,6 @@ Remove a remote
 Inspect a remote
 
 `git remote show origin`
+
+Revert your local bad commit (restore everything back to the way it was prior to the last commit)
+`git reset HEAD^     # use --soft if you want to keep your changes, with --soft git add stays`
